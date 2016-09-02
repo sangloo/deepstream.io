@@ -109,6 +109,9 @@ TcpSocket.prototype._onData = function( packet ) {
 		message = packet;
 	}
 
+//	this._socket.pause();
+//	process.nextTick( this._socket.resume.bind( this._socket ) );
+
 	this.emit( 'message', message );
 };
 

@@ -93,11 +93,7 @@ auth:
 
 # Permissioning
 permission:
-  type: config # Only config or custom permissionHandler at the moment
-  options:
-    path: ./permissions.yml # Path to the permissionFile. Can be json, js or yml
-    maxRuleIterations: 3 # Amount of times nested cross-references will be loaded. Avoids endless loops
-    cacheEvacuationInterval: 60000 # PermissionResults are cached to increase performance. Lower number means more loading
+  type: none # Only config or custom permissionHandler at the moment
 
 # Timeouts (in milliseconds)
 rpcProviderQueryTimeout: 1000

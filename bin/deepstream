@@ -3,6 +3,18 @@
 require( 'colors' );
 
 const pgk = require( '../package.json' );
+var fs = require('fs')
+var profiler = require('v8-profiler');
+profiler.startProfiling('1', true);
+setTimeout( () => {
+	var p = profiler.stopProfiling();
+
+	p.export(function(error, result) {
+	  fs.writeFileSync('profile1.cpuprofile', result);
+	  p.delete();
+	});
+	
+}, 60000 );
 
 const Command = require( 'commander' ).Command;
 const install = require( './deepstream-install' );
